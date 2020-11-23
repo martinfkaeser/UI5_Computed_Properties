@@ -61,16 +61,11 @@
         "controlAggregation": "pages",
         "transition": "slide",
         "bypassed": {
-          "target": "notFound"
+          "target": "simple1"
         },
         "async": true
       },
       "routes": [
-        {
-          "pattern": "",
-          "name": "home",
-          "target": "home"
-        },
         {
           "pattern": "simple1",
           "name": "simple1",
