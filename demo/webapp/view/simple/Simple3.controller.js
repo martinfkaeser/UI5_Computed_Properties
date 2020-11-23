@@ -24,20 +24,16 @@ sap.ui.define([
             const benutzer = DataService.generateBenutzer();
             this.setModel(new JSONModel(benutzer));
 
-            // this.addComputedProperty("local>/changed",
-            //     this.buildFuncExpressionBinding(
-            //         (login, vorname, nachname, email, loginOrig, vornameOrig, nachnameOrig, emailOrig) =>
-            //             login!==loginOrig || vorname!==vornameOrig || nachname!==nachnameOrig || email!==emailOrig,
-            //         "/login", "/vorname", "/nachname", "/email",
-            //         "orig>/login", "orig>/vorname", "orig>/nachname", "orig>/email"));
+            const concatBenutzerFelder = (login, vorname, nachname, email) =>
+                `${login}_${vorname}_${nachname}_${email}`;
 
             this.addComputedProperty("local>/benutzerHash",
                 this.buildFuncExpressionBinding(
-                    (login, vorname, nachname, email) => `${login}_${vorname}_${nachname}_${email}`,
+                    concatBenutzerFelder,
                     "/login", "/vorname", "/nachname", "/email"));
             this.addComputedProperty("local>/origHash",
                 this.buildFuncExpressionBinding(
-                    (login, vorname, nachname, email) => `${login}_${vorname}_${nachname}_${email}`,
+                    concatBenutzerFelder,
                     "orig>/login", "orig>/vorname", "orig>/nachname", "orig>/email"));
             this.addComputedProperty("local>/changed",
                 this.buildFuncExpressionBinding(

@@ -73,12 +73,13 @@
 					</code></pre>
 					<p>Formatter:</p>
 					<pre><code data-trim data-noescape>
-.. visible="{parts: ['/login', 'orig>/login', '/vorname', 'orig>/vorname']
+.. visible="{parts: ['/login','orig>/login','/vorname','orig>/vorname',..]
              formatter: '.hasChanged'}" ...
 </code></pre>
 					<ul>
 						<li>Sperrige Syntax</li>
 						<li>Keine gute Wiederverwendbarkeit</li>
+						<li>Logik (teilweise) in der View</li>
 					</ul>
 				</section>
 
@@ -122,18 +123,31 @@ this.addComputedProperty("local>/changed",
 					<p>Liste wrappen für temporäre Daten:</p>
 					<pre><code data-trim data-noescape>
 data: [
-  {prop1: .., prop2: },
+  {prop1: .., prop2: ..},
   ...
 ]
 					</code></pre>
 					&darr;
 					<pre><code data-trim data-noescape>
 wrappedData: [
-  { org: {prop1: .., prop2: },
-    temp: {editMode: .., temp: .., computed: ..}},
+  {
+    data: {prop1: .., prop2: ..},
+    temp: {editMode: .., temp: .., computed: ..}
+  },
   ...
 ]
 					</code></pre>
+				</section>
+
+				<section>
+					<h2>Vorteile</h2>
+					<ul>
+						<li>Sinnvolle Abstraktion</li>
+						<li>Redundanz vermeiden</li>
+						<li>View wird lesbarer</li>
+						<li>Berechnungslogik im Controller</li>
+						<li>Besseres Debugging</li>
+					</ul>
 				</section>
 
 				<section>

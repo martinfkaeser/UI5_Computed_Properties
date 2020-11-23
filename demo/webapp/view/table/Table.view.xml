@@ -47,25 +47,21 @@
                     </table:template>
                 </table:Column>
                 <table:Column
+                        id="email"
+                        width="20rem"
+                        sortProperty="obj/email">
+                    <Label text="E-Mail"/>
+                    <table:template>
+                        <Text text="{local>obj/email}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column
                         id="prettyEmail"
                         width="25rem"
                         sortProperty="temp/prettyEmail">
                     <Label text="Pretty E-Mail"/>
                     <table:template>
                         <Text text="{local>temp/prettyEmail}"/>
-                    </table:template>
-                </table:Column>
-                <table:Column
-                        id="geburtsdatum"
-                        width="11rem"
-                        sortProperty="obj/geburtsdatum">
-                    <Label text="Geburtsdatum"/>
-                    <table:template>
-                        <Text text="{
-								path: 'local>obj/geburtsdatum',
-								type: 'sap.ui.model.type.Date',
-								formatOptions: {source: {pattern: 'timestamp'}}
-							}"/>
                     </table:template>
                 </table:Column>
                 <table:Column
