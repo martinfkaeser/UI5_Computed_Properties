@@ -1,7 +1,7 @@
 # Computed Properties for UI5
 
 ## Presentation
-You find the presentation under presentation/index.html.
+You find the presentation at Presentation-Computed-Properties.pdf or presentation/index.html.
 
 ## Demo
 * Goto directory demo
